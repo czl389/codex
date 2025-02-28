@@ -17,13 +17,15 @@ from typing import *
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        d = {}
-        for j, num in enumerate(nums):
-            i = d.get(num)
-            if i is not None:
-                return [i, j]
-            d[target-num] = j
-        return [0,0]
+        cache = {}
+        for i, v in enumerate(nums):
+            j = cache.get(v)
+            if j is not None:
+                return [i,j]
+            cache[target-v] = i
+        return [0, 0]
+
+
         
 # @lc code=end
 
