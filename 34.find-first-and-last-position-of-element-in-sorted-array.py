@@ -35,7 +35,7 @@ class Solution:
         start = self.lowerBound(nums, target, 0, len(nums)-1)
         if start >= len(nums) or nums[start] != target:
             return [-1, -1]
-        end = self.lowerBound(nums, target+1, 0, len(nums)-1) -1
+        end = self.lowerBound(nums, target+1, start, len(nums)-1) -1
         return [start, end]
 
 
